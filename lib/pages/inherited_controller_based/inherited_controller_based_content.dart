@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:poc_state_menagement/components/custom_drawer.dart';
-import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_controller.dart';
-import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_event.dart';
-import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_state.dart';
-import 'package:poc_state_menagement/utils/controller_bloclike/controller_builder.dart';
+import 'package:poc_state_menagement/pages/inherited_controller_based/inherited_controller_based_controller.dart';
+import 'package:poc_state_menagement/utils/controller_based/controller_builder.dart';
 
-class InheritedBloclikeContent extends StatelessWidget {
-  const InheritedBloclikeContent({super.key});
+class InheritedControllerBasedContent extends StatelessWidget {
+  const InheritedControllerBasedContent({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ControllerBuilder<InheritedBloclikeController>(
+    return ControllerBuilder<InheritedControllerBasedController>(
       builder: (context, controller) => Scaffold(
         appBar: AppBar(
           title: const Text('Inherted BLoCLike'),
         ),
         body: Center(
-          child: controller.state is Loaded
-              ? Text(
-                  'Inherted BlocLike: ${(controller.state as Loaded).counter}')
+          child: !controller.state.isLoading
+              ? Text('Inherted BlocLike: ${controller.state.counter}')
               : const CircularProgressIndicator(),
         ),
         drawer: const CustomDrawer(),
-        floatingActionButton: controller.state is Loaded
+        floatingActionButton: !controller.state.isLoading
             ? Wrap(
                 direction: Axis.vertical,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   FloatingActionButton(
-                    onPressed: () => controller.add(const IncrementBloclike(1)),
-                    heroTag: 'bloclike1',
+                    onPressed: () => controller.increment(1),
+                    heroTag: 'controllerb1',
                     child: const Icon(Icons.add),
                   ),
                   Container(height: 16),
                   FloatingActionButton(
                     mini: true,
                     backgroundColor: Colors.red,
-                    onPressed: () => controller.add(const DecrementBloclike(1)),
-                    heroTag: 'bloclike2',
+                    onPressed: () => controller.decrement(2),
+                    heroTag: 'controllerb2',
                     child: const Icon(Icons.remove),
                   ),
                 ],

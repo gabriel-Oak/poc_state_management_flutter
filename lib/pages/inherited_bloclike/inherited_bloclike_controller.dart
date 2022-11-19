@@ -1,6 +1,6 @@
 import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_event.dart';
 import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_state.dart';
-import 'package:poc_state_menagement/utils/controller/controller.dart';
+import 'package:poc_state_menagement/utils/controller_bloclike/controller.dart';
 
 class InheritedBloclikeController
     extends Controller<InheritedBloclikeEvent, InheritedBloclikeState> {

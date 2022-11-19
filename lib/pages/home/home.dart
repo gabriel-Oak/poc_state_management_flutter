@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poc_state_menagement/components/custom_drawer.dart';
 import 'package:poc_state_menagement/pages/bloc_counter/bloc_counter_page.dart';
 import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_page.dart';
+import 'package:poc_state_menagement/pages/inherited_controller_based/inherited_controller_based_page.dart';
 import 'package:poc_state_menagement/pages/inherited_counter/inherited_counter_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,6 +65,22 @@ class _HomePageState extends State<HomePage> {
                 child: Center(
                     child: Text(
                   'InheritedNotifier BLoClike',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.width / 20,
+                  ),
+                  textAlign: TextAlign.center,
+                )),
+              ),
+            ),
+            GestureDetector(
+              onTap: () =>
+                  _navigateTo(context, const InheritedControllerBasedPage()),
+              child: Card(
+                elevation: 2.0,
+                child: Center(
+                    child: Text(
+                  'InheritedNotifier ControllerBased',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: MediaQuery.of(context).size.width / 20,

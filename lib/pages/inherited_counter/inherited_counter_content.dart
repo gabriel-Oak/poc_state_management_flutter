@@ -23,6 +23,7 @@ class InheritedContent extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () => controller.increment(1),
+            heroTag: 'counter1',
             child: const Icon(Icons.add),
           ),
           Container(height: 16),
@@ -30,6 +31,7 @@ class InheritedContent extends StatelessWidget {
             mini: true,
             backgroundColor: Colors.red,
             onPressed: () => controller.decrement(1),
+            heroTag: 'counter2',
             child: const Icon(Icons.remove),
           ),
         ],

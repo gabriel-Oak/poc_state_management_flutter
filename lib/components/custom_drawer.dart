@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poc_state_menagement/pages/bloc_counter/bloc_counter_page.dart';
 import 'package:poc_state_menagement/pages/home/home.dart';
 import 'package:poc_state_menagement/pages/inherited_bloclike/inherited_bloclike_page.dart';
+import 'package:poc_state_menagement/pages/inherited_controller_based/inherited_controller_based_page.dart';
 import 'package:poc_state_menagement/pages/inherited_counter/inherited_counter_page.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -34,6 +35,11 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             title: const Text('InheritedNotifier BLoClike'),
             onTap: () => _navigateTo(context, const InhertedBlocLikePage()),
+          ),
+          ListTile(
+            title: const Text('InheritedNotifier ControllerBased'),
+            onTap: () =>
+                _navigateTo(context, const InheritedControllerBasedPage()),
           ),
         ],
       ),

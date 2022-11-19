@@ -1,5 +1,5 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:poc_state_menagement/utils/controller/controller.dart';
+import 'package:poc_state_menagement/utils/controller_based/controller.dart';
 
 class ControllerBuilder<ControllerType extends Controller>
     extends StatelessWidget {

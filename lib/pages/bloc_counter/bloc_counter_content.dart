@@ -26,6 +26,7 @@ class BlocCounterContent extends StatelessWidget {
             FloatingActionButton(
               onPressed: () => BlocProvider.of<BlocCounterBloc>(context)
                   .add(const IncrementCounter(1)),
+              heroTag: 'bloc1',
               child: const Icon(Icons.add),
             ),
             Container(height: 16),
@@ -34,6 +35,7 @@ class BlocCounterContent extends StatelessWidget {
               backgroundColor: Colors.red,
               onPressed: () => BlocProvider.of<BlocCounterBloc>(context)
                   .add(const DecrementCounter(1)),
+              heroTag: 'bloc2',
               child: const Icon(Icons.remove),
             ),
           ],
