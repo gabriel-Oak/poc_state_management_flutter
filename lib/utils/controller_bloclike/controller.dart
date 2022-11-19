@@ -36,4 +36,12 @@ class Controller<Event, State> extends InheritedNotifier<ValueNotifier<State>> {
   emit(State newState) {
     if (state != newState) notifier!.value = newState;
   }
+
+  static C of<C extends Controller>(BuildContext context) {
+    final controller = context.dependOnInheritedWidgetOfExactType<C>();
+    if (controller == null) {
+      throw StateError('Could no find an instance of $C in the tree');
+    }
+    return controller;
+  }
 }

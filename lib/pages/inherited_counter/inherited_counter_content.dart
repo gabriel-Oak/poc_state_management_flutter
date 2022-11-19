@@ -11,10 +11,10 @@ class InheritedContent extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Inherted Counter'),
+        title: const Text('Inherited Counter'),
       ),
       body: Center(
-        child: Text('Inherted Counter: ${controller.counter}'),
+        child: Text('Inherited Counter: ${controller.counter}'),
       ),
       drawer: const CustomDrawer(),
       floatingActionButton: Wrap(
