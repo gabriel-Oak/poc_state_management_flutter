@@ -11,11 +11,11 @@ class InheritedControllerBasedContent extends StatelessWidget {
     return ControllerBuilder<InheritedControllerBasedController>(
       builder: (context, controller) => Scaffold(
         appBar: AppBar(
-          title: const Text('Inherited BLoCLike'),
+          title: const Text('Inherited Controller Based'),
         ),
         body: Center(
           child: !controller.state.isLoading
-              ? Text('Inherited BlocLike: ${controller.state.counter}')
+              ? Text('Inherited ControllerBased: ${controller.state.counter}')
               : const CircularProgressIndicator(),
         ),
         drawer: const CustomDrawer(),
